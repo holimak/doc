@@ -22,7 +22,7 @@
 
 [CARSI_IdP接入本地认证系统及属性释放.md](CARSI_IdP接入本地认证系统及属性释放.md)
 
-[CARSI_IdP环境验证.md](CARSI_IdP环境验证.md)
+[CARSI_IdP认证测试.md](CARSI_IdP认证测试.md)
 
 [CARSI_IdP界面简单定制.md](CARSI_IdP界面简单定制.md)
 
