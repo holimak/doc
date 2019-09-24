@@ -1,0 +1,144 @@
+2019-07-31 19:15:01 DEBUG Shibboleth.Listener [8]: dispatching message (get::RelayState)
+2019-07-31 19:15:01 DEBUG Shibboleth.Listener [8] [default]: dispatching message (default/Login::run::SAML2SI)
+2019-07-31 19:15:01 DEBUG OpenSAML.MessageEncoder.SAML2Redirect [8] [default]: validating input
+2019-07-31 19:15:01 DEBUG OpenSAML.MessageEncoder.SAML2Redirect [8] [default]: marshalling, deflating, base64-encoding the message
+2019-07-31 19:15:01 DEBUG OpenSAML.MessageEncoder.SAML2Redirect [8] [default]: marshalled message:
+<samlp:AuthnRequest xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol" AssertionConsumerServiceURL="https://sptest.pku.edu.cn/Shibboleth.sso/SAML2/POST" Destination="https://casidp.pku.edu.cn/idp/profile/SAML2/Redirect/SSO" ID="_4a2f880659b95c53724299cd0acb3945" IssueInstant="2019-07-31T11:15:01Z" ProtocolBinding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Version="2.0"><saml:Issuer xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">https://sptest.pku.edu.cn/shibboleth</saml:Issuer><samlp:NameIDPolicy AllowCreate="1"/></samlp:AuthnRequest>
+2019-07-31 19:15:01 DEBUG OpenSAML.MessageEncoder.SAML2Redirect [8] [default]: message encoded, sending redirect to client
+2019-07-31 19:15:12 DEBUG Shibboleth.Listener [4] [default]: dispatching message (default/SAML2/POST)
+2019-07-31 19:15:12 DEBUG OpenSAML.MessageDecoder.SAML2POST [4] [default]: validating input
+2019-07-31 19:15:12 DEBUG OpenSAML.MessageDecoder.SAML2POST [4] [default]: decoded SAML message:
+<?xml version="1.0" encoding="UTF-8"?>
+<saml2p:Response Destination="https://sptest.pku.edu.cn/Shibboleth.sso/SAML2/POST" ID="_bef4fcb07bfb0427c0e107fe3a526e73" InResponseTo="_4a2f880659b95c53724299cd0acb3945" IssueInstant="2019-07-31T11:15:11.380Z" Version="2.0" xmlns:saml2p="urn:oasis:names:tc:SAML:2.0:protocol"><saml2:Issuer xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion">https://casidp.pku.edu.cn/idp/shibboleth</saml2:Issuer><ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#"><ds:SignedInfo><ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><ds:Reference URI="#_bef4fcb07bfb0427c0e107fe3a526e73"><ds:Transforms><ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/><ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></ds:Transforms><ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><ds:DigestValue>TQCofrbw/Tybd6LwRL0gbRNfpssiyx29npjnEuyc796jwJRIsdHB4Ret3SLFmcK9zXHfWGZB4Td1aV2X/KxG0A==</ds:DigestValue></ds:Reference></ds:SignedInfo><ds:SignatureValue>jS9XUa49zzJ4kba6LNwyWi82/zfiagEbE6Um4tY4djrnvwPJY8mofh3J49uNGHN+oNYO7bE/ZwsChyxIZF+8nyjWTcd5IfSJJAeR22pVqX8V2eRvkYBh97YaYA+iOiy9VFyvshkszDujIgdtysyvIl9Zg59BxpI30c0IkBJBlHoWWenNnou67YQuACYhoyRH+vWs5Du90rRpUgSYJ177fJEJuYMId4gJ6LyzhTaey7pr0IyOISdnF4MDCmBKffZ8BxpTia8IqDKiW72EbYoI8Bviai5Wcs9RYTY6pigf9VCewUvKRrdX9vPHXuCMy2NiX+DuKw7tgAQxj2DyDpEQpkNp37cAbRjjOrHGN/tYBPnPHq2ji66Y9vbKpEnKQgGmTQEHrbN0I5vtGI6iM15KLc/dto9dZlse2rP8qPEvvlFIBQ3Uk08PYbjE6kPqkZB1ad+TdWYF5f5Xb5SiIuYSIRvWgTIOydT1ZPiYE1sLHLSBkHSLo/xABTkRn2ymdXHw</ds:SignatureValue><ds:KeyInfo><ds:X509Data><ds:X509Certificate>MIIELzCCApegAwIBAgIUXRLnwW0YJZB5H+q6CW1GCW9QBIswDQYJKoZIhvcNAQELBQAwHDEaMBgG
+A1UEAwwRY2FzaWRwLnBrdS5lZHUuY24wHhcNMTkwNjAzMDY1NjI3WhcNMzkwNjAzMDY1NjI3WjAc
+MRowGAYDVQQDDBFjYXNpZHAucGt1LmVkdS5jbjCCAaIwDQYJKoZIhvcNAQEBBQADggGPADCCAYoC
+ggGBAKwbImzPOYjf40ZXc7VIWUs+zNUPnpoLAaOQQYlYo5p7rxDDyzRAqqQG9XKT4yt/9YAgNrO1
+6j3X8JTOvy0sp7a4vOOWJgUcb6rIBYZWXcjTR3QHqn7l7f1GwJzGWGNeM5SybwhZLLK56UlG1Tni
+MT19vOhBlGLZn9O0XHwFi5aoDHChKeReekkmx6xCvdmLzL8YoY3aauIyTrQ+JxunLjY7hmMg1Ub4
+n/S4mCpEwbz32u1Tg+KOhSo4Y8UCbK/t6CEHRNm5Tu6MRrI8f1PKzhPVLsz4zE5AauEcVd4cnhWE
+rmU8lcomBn+Hf9pgXu120f0gYK0s1n/wJIIHypaFTSjTju9cc6tVownJ/ZQOm+9H02nVlMfCTN/7
+Vy3KdAnYDVvZX1+FkPPQG5qaV12fCqKK0w+AqD0yjjfZsKo1cJvjxlhWCQVdPCHIf2E+0ua4euVM
+kL3UmGXgvjtzXA9oNcT1hap/Qr5NQ5BZPKYf3z3JW+y8veKazEmYyUHxJuXdeQIDAQABo2kwZzAd
+BgNVHQ4EFgQUCRa7hcMclcLRnbf79oEMXJDE1yowRgYDVR0RBD8wPYIRY2FzaWRwLnBrdS5lZHUu
+Y26GKGh0dHBzOi8vY2FzaWRwLnBrdS5lZHUuY24vaWRwL3NoaWJib2xldGgwDQYJKoZIhvcNAQEL
+BQADggGBABkztA+LmEOb+c1AYpT1HO+meyI5uOM76S0TdKS0WH6VK8NfIqvIkq3Qk31k5Ar/N1Aw
+7X/4TVQmFbqiOJX9u3p5NQEw/RE57HNbmKp3pikUDVQ5NbHLdvQtcx5hNmNy5UpVd7WtMiXTualA
+e3qjfmowTzZibNBzSYgC44eBUB+csQpfk78gX5jda0mdrOxxZ67IqV7TgnyUMf8WTP9xIHaUnZHV
+FY+YgoX3VQRhdQKA0QVIGvGM/AuSmCQr11sfSDE5NhI8zxngTZSpGiFJnKISYVpwR36zvuyIGuuz
+83kJf5Ravk7QhXH0teSKLRo8FckUOsL9XeZgqEziM/MbOMLIgOEjky4VBPLwYnIw1UrxpjR3Dbmr
+ABnt5l/FjcZ5as5XpaErO4j5P+NZIzn43tUa0ofn353RlMgSKb6jDfsu97GFpWV0BOF+FwsLE32h
+eiYhha3LMaq8ab2V35syMFWmTjtGrWPzIFkqMKIz56lM8lBk1gnM0tYPv8UwGIqBnA==</ds:X509Certificate></ds:X509Data></ds:KeyInfo></ds:Signature><saml2p:Status><saml2p:StatusCode Value="urn:oasis:names:tc:SAML:2.0:status:Success"/></saml2p:Status><saml2:EncryptedAssertion xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion"><xenc:EncryptedData Id="_1a4433e581697f255428eb173d4bf216" Type="http://www.w3.org/2001/04/xmlenc#Element" xmlns:xenc="http://www.w3.org/2001/04/xmlenc#"><xenc:EncryptionMethod Algorithm="http://www.w3.org/2009/xmlenc11#aes128-gcm" xmlns:xenc="http://www.w3.org/2001/04/xmlenc#"/><ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#"><xenc:EncryptedKey Id="_ef37610b65eb8c690af4566dc43b78ec" Recipient="https://sptest.pku.edu.cn/shibboleth" xmlns:xenc="http://www.w3.org/2001/04/xmlenc#"><xenc:EncryptionMethod Algorithm="http://www.w3.org/2009/xmlenc11#rsa-oaep" xmlns:xenc="http://www.w3.org/2001/04/xmlenc#"><ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" xmlns:ds="http://www.w3.org/2000/09/xmldsig#"/><xenc11:MGF Algorithm="http://www.w3.org/2009/xmlenc11#mgf1sha1" xmlns:xenc11="http://www.w3.org/2009/xmlenc11#"/></xenc:EncryptionMethod><ds:KeyInfo><ds:X509Data><ds:X509Certificate>MIID+jCCAmKgAwIBAgIJAJGaT0g2qaCLMA0GCSqGSIb3DQEBCwUAMBwxGjAYBgNVBAMTEXNwdGVz
+dC5wa3UuZWR1LmNuMB4XDTE5MDMyNTA1MDgzM1oXDTI5MDMyMjA1MDgzM1owHDEaMBgGA1UEAxMR
+c3B0ZXN0LnBrdS5lZHUuY24wggGiMA0GCSqGSIb3DQEBAQUAA4IBjwAwggGKAoIBgQC8ykSpX7en
+uM7XkOkJNjGrbzldY7fehigyc9dUP9csuNjxFDPMT+bUJGyWUqayZ9CVMXVZlinT/b4BETL8H9ql
+G9bEYD3GIjWfG4nOr6dbzjTes5lYmkgo9Q+CTUC6VK82RNV6/3nCefOlZandAjYA9EPwp/gTtB1y
+xmMwe8o41/OYlIA9TdYAehC0NnbuLYeCfySeezQx3uHU/Ku8AmivnSe+eLiWIjSAr/+bOFg4h4bV
+HG9VAxADQ8pUDP3wlfGZfv482rcpV08cMin337yvEDG63p+GUfRP+vTgVb0Wz6y0x8HplulKHgzN
+kzMBMnLbYyxVHxI/3tpt8H760HW3AP6na7J7ra2QSzGq9+i4zzRmtPmvU1muQXMtZFe5Be03pV/A
+Kvr/4M7C7aBXtYgsbgrsFDwmT50w7XgM7u11tq7IOSddySxAyPQ9vGqQYbQA2ti6/Ahfj7uOyQ5F
+f2t5/mkBWB5+XzgQUeiwYihdk80Atq1jGSOk4EuPnXdvntUCAwEAAaM/MD0wHAYDVR0RBBUwE4IR
+c3B0ZXN0LnBrdS5lZHUuY24wHQYDVR0OBBYEFLnV1rONZ+dl0wq96tZhoGwCE4G6MA0GCSqGSIb3
+DQEBCwUAA4IBgQBhqB1EHUwk23VvGqks6EbRhNI5W/3vipBpCbsMUFG59d+cqlwkp49dCH5BagyH
+Ao+HqZBWVtz4s3MhPeJCa14Cx1NtlR90FdQUkG1tz6yykOBeMkoBJxh8lWMXPhOR/Iy0N8N2mP/t
+BL9Tmh/9aU+laIiS2SvWX/7nT0/6vh1dnfs5Zr1y+8hCZEYf4uT2V3RAoMgmJX+WAoHMhXk5m9S0
+2An3s0fhGrVhAn/Ls0UpKg0CkTpAOCuWk9qfGgvZROXz8cDRTZgQfcrFemQY/cqDYSEY9E9vjCOl
+c68hYB0Bqx7Ymu+StehD5l5OaW/sNIW0ZHSsvNsjbbDi3d+CpJ/bHDKWhJQeYs359TiTFt2nmETB
+aJiVcYMIcx0H1xlp4e/u2jykmCUm9abxndGqeseo6gTeVkCTQmEcoovwcwL3F1WEYDBZN5+SiZ/Z
+raTlTLnrxetlEHabEJOVHAzUpNwcBx69HC7eZiRr+5EGzyWzs+2lIWhVBhzgxZACcY9Ueao=</ds:X509Certificate></ds:X509Data></ds:KeyInfo><xenc:CipherData xmlns:xenc="http://www.w3.org/2001/04/xmlenc#"><xenc:CipherValue>jZYuG8b61wmKyClSWPnGwKO40MNSH1PSqjc/cJ9r86VqApHEuJRyIyqcx/ur+AwLHcT6lluDqFCPVYhnnXjVc+OWLb5unX2fuXvFK524BCNSmGaPqvnYbhi4jXer/YausIgkmsYQzyZoteyIUkbai98W1WMNcxYTeSg2W+//dDM6dq8U9qhpAMf66GY+qa0o3nL9h0W7m1Up+wCo9kxA7W/loNy7iWoyMh6kBbwR+A7S1GbNIlVg/UQEpDqvhP8Fdw5EtwtVwGraeZY1pPNVT4ENUsn4Q3zqJobec50R7jKw2O4kWkEoJw9vrYBZTACGsX5fjNxxQ2IO0NcdIcYFN2lXh6jEljJ1Gf5aaPDA3kbKSnYSNwf2H2V3L9eL6sjysRiw9Pt4Z63cfXHdXwGjIKUPg8xWL3da6iv74/jWwH2/rMj+6uYCSjmVfnrzea41k2VCrlnZGn61I5szER7OwTfGPY/UYkYd6crx1EAJtFgnon5VQp2HhevXVyB/XjZW</xenc:CipherValue></xenc:CipherData></xenc:EncryptedKey></ds:KeyInfo><xenc:CipherData xmlns:xenc="http://www.w3.org/2001/04/xmlenc#"><xenc:CipherValue>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</xenc:CipherValue></xenc:CipherData></xenc:EncryptedData></saml2:EncryptedAssertion></saml2p:Response>
+2019-07-31 19:15:12 DEBUG XMLTooling.XMLObjectBuilder [4] [default]: located XMLObjectBuilder for element name: saml2p:Response
+2019-07-31 19:15:12 DEBUG XMLTooling.XMLObjectBuilder [4] [default]: located XMLObjectBuilder for element name: saml2:Issuer
+2019-07-31 19:15:12 DEBUG XMLTooling.XMLObjectBuilder [4] [default]: located XMLObjectBuilder for element name: ds:Signature
+2019-07-31 19:15:12 DEBUG XMLTooling.Signature [4] [default]: unmarshalling ds:Signature
+2019-07-31 19:15:12 DEBUG XMLTooling.XMLObjectBuilder [4] [default]: located XMLObjectBuilder for element name: saml2p:Status
+2019-07-31 19:15:12 DEBUG XMLTooling.XMLObjectBuilder [4] [default]: located XMLObjectBuilder for element name: saml2p:StatusCode
+2019-07-31 19:15:12 DEBUG XMLTooling.XMLObjectBuilder [4] [default]: located XMLObjectBuilder for element name: saml2:EncryptedAssertion
+2019-07-31 19:15:12 DEBUG XMLTooling.XMLObjectBuilder [4] [default]: located XMLObjectBuilder for element name: xenc:EncryptedData
+2019-07-31 19:15:12 DEBUG XMLTooling.XMLObjectBuilder [4] [default]: located XMLObjectBuilder for element name: xenc:EncryptionMethod
+2019-07-31 19:15:12 DEBUG XMLTooling.XMLObjectBuilder [4] [default]: located XMLObjectBuilder for element name: ds:KeyInfo
+2019-07-31 19:15:12 DEBUG XMLTooling.XMLObjectBuilder [4] [default]: located XMLObjectBuilder for element name: xenc:EncryptedKey
+2019-07-31 19:15:12 DEBUG XMLTooling.XMLObjectBuilder [4] [default]: located XMLObjectBuilder for element name: xenc:EncryptionMethod
+2019-07-31 19:15:12 DEBUG XMLTooling.XMLObjectBuilder [4] [default]: no XMLObjectBuilder registered for element (ds:DigestMethod), returning default
+2019-07-31 19:15:12 DEBUG XMLTooling.XMLObjectBuilder [4] [default]: located XMLObjectBuilder for element name: xenc11:MGF
+2019-07-31 19:15:12 DEBUG XMLTooling.XMLObjectBuilder [4] [default]: located XMLObjectBuilder for element name: ds:KeyInfo
+2019-07-31 19:15:12 DEBUG XMLTooling.XMLObjectBuilder [4] [default]: located XMLObjectBuilder for element name: ds:X509Data
+2019-07-31 19:15:12 DEBUG XMLTooling.XMLObjectBuilder [4] [default]: located XMLObjectBuilder for element name: ds:X509Certificate
+2019-07-31 19:15:12 DEBUG XMLTooling.XMLObjectBuilder [4] [default]: located XMLObjectBuilder for element name: xenc:CipherData
+2019-07-31 19:15:12 DEBUG XMLTooling.XMLObjectBuilder [4] [default]: located XMLObjectBuilder for element name: xenc:CipherValue
+2019-07-31 19:15:12 DEBUG XMLTooling.XMLObjectBuilder [4] [default]: located XMLObjectBuilder for element name: xenc:CipherData
+2019-07-31 19:15:12 DEBUG XMLTooling.XMLObjectBuilder [4] [default]: located XMLObjectBuilder for element name: xenc:CipherValue
+2019-07-31 19:15:12 DEBUG OpenSAML.MessageDecoder.SAML2 [4] [default]: extracting issuer from SAML 2.0 protocol message
+2019-07-31 19:15:12 DEBUG XMLTooling.XMLObjectBuilder [4] [default]: located XMLObjectBuilder for element name: saml2:Issuer
+2019-07-31 19:15:12 DEBUG OpenSAML.MessageDecoder.SAML2 [4] [default]: message from (https://casidp.pku.edu.cn/idp/shibboleth)
+2019-07-31 19:15:12 DEBUG OpenSAML.MessageDecoder.SAML2 [4] [default]: searching metadata for message issuer...
+2019-07-31 19:15:12 DEBUG OpenSAML.SecurityPolicyRule.MessageFlow [4] [default]: evaluating message flow policy (replay checking on, expiration 60)
+2019-07-31 19:15:12 DEBUG XMLTooling.StorageService [4] [default]: inserted record (_bef4fcb07bfb0427c0e107fe3a526e73) in context (MessageFlow) with expiration (1564571951)
+2019-07-31 19:15:12 DEBUG OpenSAML.SecurityPolicyRule.XMLSigning [4] [default]: validating signature profile
+2019-07-31 19:15:12 DEBUG XMLTooling.CredentialCriteria [4] [default]: keys didn't match
+2019-07-31 19:15:12 DEBUG XMLTooling.TrustEngine.ExplicitKey [4] [default]: attempting to validate signature with the peer's credentials
+2019-07-31 19:15:12 DEBUG XMLTooling.TrustEngine.ExplicitKey [4] [default]: signature validated with credential
+2019-07-31 19:15:12 DEBUG OpenSAML.SecurityPolicyRule.XMLSigning [4] [default]: signature verified against message issuer
+2019-07-31 19:15:12 DEBUG Shibboleth.SSO.SAML2 [4] [default]: processing message against SAML 2.0 SSO profile
+2019-07-31 19:15:12 DEBUG XMLTooling.CredentialCriteria [4] [default]: usage didn't match (4 != 3)
+2019-07-31 19:15:12 DEBUG XMLTooling.CredentialCriteria [4] [default]: key algorithm didn't match ('AES' != 'RSA')
+2019-07-31 19:15:12 DEBUG XMLTooling.CredentialCriteria [4] [default]: usage didn't match (4 != 3)
+2019-07-31 19:15:12 DEBUG XMLTooling.XMLObjectBuilder [4] [default]: located XMLObjectBuilder for element name: saml2:Assertion
+2019-07-31 19:15:12 DEBUG XMLTooling.XMLObjectBuilder [4] [default]: located XMLObjectBuilder for element name: saml2:Issuer
+2019-07-31 19:15:12 DEBUG XMLTooling.XMLObjectBuilder [4] [default]: located XMLObjectBuilder for element name: saml2:Subject
+2019-07-31 19:15:12 DEBUG XMLTooling.XMLObjectBuilder [4] [default]: located XMLObjectBuilder for element name: saml2:NameID
+2019-07-31 19:15:12 DEBUG XMLTooling.XMLObjectBuilder [4] [default]: located XMLObjectBuilder for element name: saml2:SubjectConfirmation
+2019-07-31 19:15:12 DEBUG XMLTooling.XMLObjectBuilder [4] [default]: located XMLObjectBuilder for element name: saml2:SubjectConfirmationData
+2019-07-31 19:15:12 DEBUG XMLTooling.XMLObjectBuilder [4] [default]: located XMLObjectBuilder for element name: saml2:Conditions
+2019-07-31 19:15:12 DEBUG XMLTooling.XMLObjectBuilder [4] [default]: located XMLObjectBuilder for element name: saml2:AudienceRestriction
+2019-07-31 19:15:12 DEBUG XMLTooling.XMLObjectBuilder [4] [default]: located XMLObjectBuilder for element name: saml2:Audience
+2019-07-31 19:15:12 DEBUG XMLTooling.XMLObjectBuilder [4] [default]: located XMLObjectBuilder for element name: saml2:AuthnStatement
+2019-07-31 19:15:12 DEBUG XMLTooling.XMLObjectBuilder [4] [default]: located XMLObjectBuilder for element name: saml2:SubjectLocality
+2019-07-31 19:15:12 DEBUG XMLTooling.XMLObjectBuilder [4] [default]: located XMLObjectBuilder for element name: saml2:AuthnContext
+2019-07-31 19:15:12 DEBUG XMLTooling.XMLObjectBuilder [4] [default]: located XMLObjectBuilder for element name: saml2:AuthnContextClassRef
+2019-07-31 19:15:12 DEBUG XMLTooling.XMLObjectBuilder [4] [default]: located XMLObjectBuilder for element name: saml2:AttributeStatement
+2019-07-31 19:15:12 DEBUG XMLTooling.XMLObjectBuilder [4] [default]: located XMLObjectBuilder for element name: saml2:Attribute
+2019-07-31 19:15:12 DEBUG XMLTooling.XMLObjectBuilder [4] [default]: located XMLObjectBuilder for element name: saml2:AttributeValue
+2019-07-31 19:15:12 DEBUG Shibboleth.SSO.SAML2 [4] [default]: decrypted Assertion: <saml2:Assertion xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion" ID="_5bce437fe3ab23dd5574dc4571be9052" IssueInstant="2019-07-31T11:15:11.380Z" Version="2.0"><saml2:Issuer>https://casidp.pku.edu.cn/idp/shibboleth</saml2:Issuer><saml2:Subject><saml2:NameID Format="urn:oasis:names:tc:SAML:2.0:nameid-format:transient" NameQualifier="https://casidp.pku.edu.cn/idp/shibboleth" SPNameQualifier="https://sptest.pku.edu.cn/shibboleth">AAdzZWNyZXQxKOxw4wBTqeq2ye8DErRAouc4EuO90xcXYsB3FSaPIXT1eDU8p+NQWpRvlxNmvqFAUid5y4jWw3NJFtBsghA+9JM/O8SmqpSHiM2xg9UinCcI2BKVNqHtmEaT7Osg19+hxmkRBcDKN6J+dg==</saml2:NameID><saml2:SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer"><saml2:SubjectConfirmationData Address="162.105.126.239" InResponseTo="_4a2f880659b95c53724299cd0acb3945" NotOnOrAfter="2019-07-31T11:20:11.389Z" Recipient="https://sptest.pku.edu.cn/Shibboleth.sso/SAML2/POST"/></saml2:SubjectConfirmation></saml2:Subject><saml2:Conditions NotBefore="2019-07-31T11:15:11.380Z" NotOnOrAfter="2019-07-31T11:20:11.380Z"><saml2:AudienceRestriction><saml2:Audience>https://sptest.pku.edu.cn/shibboleth</saml2:Audience></saml2:AudienceRestriction></saml2:Conditions><saml2:AuthnStatement AuthnInstant="2019-07-31T11:15:09.831Z" SessionIndex="_b8a4291a6daf38692050477853ac1368"><saml2:SubjectLocality Address="162.105.126.239"/><saml2:AuthnContext><saml2:AuthnContextClassRef>urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport</saml2:AuthnContextClassRef></saml2:AuthnContext></saml2:AuthnStatement><saml2:AttributeStatement><saml2:Attribute FriendlyName="eduPersonScopedAffiliation" Name="urn:oid:1.3.6.1.4.1.5923.1.1.1.9" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"><saml2:AttributeValue>faculty@pku.edu.cn</saml2:AttributeValue></saml2:Attribute></saml2:AttributeStatement></saml2:Assertion>
+2019-07-31 19:15:12 DEBUG Shibboleth.SSO.SAML2 [4] [default]: extracting issuer from SAML 2.0 assertion
+2019-07-31 19:15:12 DEBUG OpenSAML.SecurityPolicyRule.MessageFlow [4] [default]: evaluating message flow policy (replay checking on, expiration 60)
+2019-07-31 19:15:12 DEBUG XMLTooling.StorageService [4] [default]: inserted record (_5bce437fe3ab23dd5574dc4571be9052) in context (MessageFlow) with expiration (1564571951)
+2019-07-31 19:15:12 DEBUG OpenSAML.SecurityPolicyRule.BearerConfirmation [4] [default]: assertion satisfied bearer confirmation requirements
+2019-07-31 19:15:12 DEBUG Shibboleth.SSO.SAML2 [4] [default]: SSO profile processing completed successfully
+2019-07-31 19:15:12 DEBUG Shibboleth.SSO.SAML2 [4] [default]: extracting pushed attributes...
+2019-07-31 19:15:12 DEBUG Shibboleth.AttributeExtractor.XML [4] [default]: unable to extract attributes, unknown XML object type: saml2p:Response
+2019-07-31 19:15:12 DEBUG Shibboleth.AttributeExtractor.XML [4] [default]: skipping unmapped NameID with format (urn:oasis:names:tc:SAML:2.0:nameid-format:transient)
+2019-07-31 19:15:12 DEBUG Shibboleth.AttributeExtractor.XML [4] [default]: unable to extract attributes, unknown XML object type: saml2:AuthnStatement
+2019-07-31 19:15:12 DEBUG Shibboleth.AttributeDecoder.Scoped [4] [default]: decoding ScopedAttribute (affiliation) from SAML 2 Attribute (urn:oid:1.3.6.1.4.1.5923.1.1.1.9) with 1 value(s)
+2019-07-31 19:15:12 DEBUG Shibboleth.AttributeFilter [4] [default]: filtering 1 attribute(s) from (https://casidp.pku.edu.cn/idp/shibboleth)
+2019-07-31 19:15:12 DEBUG Shibboleth.AttributeFilter [4] [default]: applying filtering rule(s) for attribute (affiliation) from (https://casidp.pku.edu.cn/idp/shibboleth)
+2019-07-31 19:15:12 DEBUG Shibboleth.SessionCache [4] [default]: creating new session
+2019-07-31 19:15:12 DEBUG Shibboleth.SessionCache [4] [default]: storing new session...
+2019-07-31 19:15:12 DEBUG XMLTooling.StorageService [4] [default]: inserted record (session) in context (_485f49baee4d647556320031c88bd375) with expiration (1564575312)
+2019-07-31 19:15:12 DEBUG XMLTooling.StorageService [4] [default]: inserted record (AAdzZWNyZXQxKOxw4wBTqeq2ye8DErRAouc4EuO90xcXYsB3FSaPIXT1eDU8p+NQWpRvlxNmvqFAUid5y4jWw3NJFtBsghA+9JM/O8SmqpSHiM2xg9UinCcI2BKVNqHtmEaT7Osg19+hxmkRBcDKN6J+dg==) in context (NameID) with expiration (1564600512)
+2019-07-31 19:15:12 INFO Shibboleth.SessionCache [4] [default]: new session created: ID (_485f49baee4d647556320031c88bd375) IdP (https://casidp.pku.edu.cn/idp/shibboleth) Protocol(urn:oasis:names:tc:SAML:2.0:protocol) Address (162.105.126.239)
+2019-07-31 19:15:12 DEBUG XMLTooling.StorageService [4] [default]: deleted record (81c99ac3ed75dcecb5eacf05fb24ea45ece6e1a70a1277f4ea2bafcd748788d4) in context (RelayState)
+2019-07-31 19:15:12 DEBUG Shibboleth.SSO.SAML2 [4] [default]: ACS returning via redirect to: https://sptest.pku.edu.cn/secure
+2019-07-31 19:15:12 DEBUG Shibboleth.Listener [4] [default]: dispatching message (find::StorageService::SessionCache)
+2019-07-31 19:15:12 DEBUG XMLTooling.StorageService [4] [default]: updated expiration of valid records in context (_485f49baee4d647556320031c88bd375) to (1564575312)
+2019-07-31 19:15:12 DEBUG Shibboleth.Listener [4] [default]: dispatching message (touch::StorageService::SessionCache)
+2019-07-31 19:15:12 DEBUG XMLTooling.StorageService [4] [default]: updated expiration of valid records in context (_485f49baee4d647556320031c88bd375) to (1564575312)
+2019-07-31 19:15:12 DEBUG Shibboleth.Listener [4] [default]: dispatching message (touch::StorageService::SessionCache)
+2019-07-31 19:15:12 DEBUG XMLTooling.StorageService [4] [default]: updated expiration of valid records in context (_485f49baee4d647556320031c88bd375) to (1564575312)
+2019-07-31 19:15:12 DEBUG Shibboleth.Listener [4] [default]: dispatching message (touch::StorageService::SessionCache)
+2019-07-31 19:15:12 DEBUG XMLTooling.StorageService [4] [default]: updated expiration of valid records in context (_485f49baee4d647556320031c88bd375) to (1564575312)
+2019-07-31 19:15:12 DEBUG Shibboleth.Listener [4] [default]: dispatching message (touch::StorageService::SessionCache)
+2019-07-31 19:15:12 DEBUG XMLTooling.StorageService [4] [default]: updated expiration of valid records in context (_485f49baee4d647556320031c88bd375) to (1564575312)
+2019-07-31 19:15:12 DEBUG Shibboleth.Listener [4] [default]: dispatching message (touch::StorageService::SessionCache)
+2019-07-31 19:15:12 DEBUG XMLTooling.StorageService [4] [default]: updated expiration of valid records in context (_485f49baee4d647556320031c88bd375) to (1564575312)
+2019-07-31 19:15:12 DEBUG Shibboleth.Listener [4] [default]: dispatching message (touch::StorageService::SessionCache)
+2019-07-31 19:15:12 DEBUG XMLTooling.StorageService [4] [default]: updated expiration of valid records in context (_485f49baee4d647556320031c88bd375) to (1564575312)
+2019-07-31 19:15:12 DEBUG Shibboleth.Listener [4] [default]: dispatching message (touch::StorageService::SessionCache)
+2019-07-31 19:15:12 DEBUG XMLTooling.StorageService [4] [default]: updated expiration of valid records in context (_485f49baee4d647556320031c88bd375) to (1564575312)
+2019-07-31 19:15:15 INFO OpenSAML.MetadataProvider.XML : reloading remote resource...
+2019-07-31 19:15:15 DEBUG OpenSAML.MetadataProvider.XML : remote metadata resource will be backed up to (/var/cache/shibboleth/carsifed-metadata-pre.xml.e343)
+2019-07-31 19:15:15 DEBUG OpenSAML.MetadataProvider.XML : loading configuration from external resource...
+2019-07-31 19:15:15 DEBUG OpenSAML.MetadataProvider.XML : writing to backing file: /var/cache/shibboleth/carsifed-metadata-pre.xml.e343
+2019-07-31 19:15:15 DEBUG XMLTooling.util.CloneInputStream : initialized
+2019-07-31 19:15:15 DEBUG XMLTooling.util.CloneInputStream : deleted
+2019-07-31 19:15:15 INFO OpenSAML.MetadataProvider.XML : remote resource (https://dspre.carsi.edu.cn/carsifed-metadata-pre.xml) unchanged, adjusted reload interval to 60 seconds
+2019-07-31 19:15:15 INFO OpenSAML.MetadataProvider.XML : remote resource (https://dspre.carsi.edu.cn/carsifed-metadata-pre.xml) unchanged from cached version
+
