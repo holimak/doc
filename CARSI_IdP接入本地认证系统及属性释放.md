@@ -59,7 +59,9 @@ idp.authn.LDAP.dnFormat = uid=%s, ou=People,dc=Test,dc=Test
 idp.authn.LDAP.subtreeSearch = true
 ```
 
-因LDAP服务器配置差异，以上配置请和LDAP管理员确认。
+因LDAP服务器配置差异，以上配置请和LDAP管理员确认。强烈建议先在IdP所在的服务器上测试一下对本校LDAP的连接性。
+
+**注：**华东师范大学冯骐老师分享了一个轻量级的 LDAP测试工具 https://github.com/shanghai-edu/ldap-test-tool ， 可以用来进行测试
 
 配置属性释放，用以下内容替换/opt/shibboleth-idp/conf/attribute-resolver.xml文件：
 
