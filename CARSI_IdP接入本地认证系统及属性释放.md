@@ -401,7 +401,7 @@ cas.authn.attributeRepository.defaultAttributesToRelease=eduPersonScopedAffiliat
 ## 3. 释放用户属性
 
 使用以下内容替换/opt/shibboleth-idp/conf/attribute-filter.xml，配置属性释放原则：
-
+#xsi:type=”ANY”表示的是对任意SP释放属性，permitAny=”true”，表示的是释放任意eduPersonScopedAffiliation取值的属性
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <AttributeFilterPolicyGroup id="ShibbolethFilterPolicy"
@@ -411,9 +411,7 @@ cas.authn.attributeRepository.defaultAttributesToRelease=eduPersonScopedAffiliat
 
      <AttributeFilterPolicy id="carsiAttrFilterPolicy">
          <PolicyRequirementRule xsi:type="ANY" />
-         #xsi:type=”ANY”表示的是对任意SP释放属性
          <AttributeRule attributeID="eduPersonScopedAffiliation" permitAny="true" />
-         # permitAny=”true”，表示的是释放任意eduPersonScopedAffiliation取值的属性
          <AttributeRule attributeID="eduPersonPrincipalName" permitAny="true" />
      </AttributeFilterPolicy>
 
