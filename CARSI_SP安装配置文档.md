@@ -1,3 +1,27 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [CARSI SP 安装配置文档](#carsi-sp-%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E6%96%87%E6%A1%A3)
+  - [目标](#%E7%9B%AE%E6%A0%87)
+  - [安装准备](#%E5%AE%89%E8%A3%85%E5%87%86%E5%A4%87)
+  - [安装步骤](#%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4)
+    - [1. 安装前准备](#1-%E5%AE%89%E8%A3%85%E5%89%8D%E5%87%86%E5%A4%87)
+      - [1.1 修改本机hostname](#11-%E4%BF%AE%E6%94%B9%E6%9C%AC%E6%9C%BAhostname)
+      - [1.2 关闭selinux](#12-%E5%85%B3%E9%97%ADselinux)
+      - [1.3端口开放](#13%E7%AB%AF%E5%8F%A3%E5%BC%80%E6%94%BE)
+      - [1.4 设置时间同步](#14-%E8%AE%BE%E7%BD%AE%E6%97%B6%E9%97%B4%E5%90%8C%E6%AD%A5)
+    - [2. 运行环境安装](#2-%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85)
+      - [2.1 apache安装](#21-apache%E5%AE%89%E8%A3%85)
+      - [2.2 SSL安装](#22-ssl%E5%AE%89%E8%A3%85)
+    - [3. SP安装&本地配置](#3-sp%E5%AE%89%E8%A3%85%E6%9C%AC%E5%9C%B0%E9%85%8D%E7%BD%AE)
+    - [4. 向CARSI联盟提交SP配置信息](#4-%E5%90%91carsi%E8%81%94%E7%9B%9F%E6%8F%90%E4%BA%A4sp%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF)
+    - [5. 认证测试](#5-%E8%AE%A4%E8%AF%81%E6%B5%8B%E8%AF%95)
+    - [6. 日志功能&分析配置](#6-%E6%97%A5%E5%BF%97%E5%8A%9F%E8%83%BD%E5%88%86%E6%9E%90%E9%85%8D%E7%BD%AE)
+    - [7. SP上线运行](#7-sp%E4%B8%8A%E7%BA%BF%E8%BF%90%E8%A1%8C)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # CARSI SP 安装配置文档
 
 本文档为根据Shibboleth原始安装包（通过网络安装，不需要提前下载安装包）进行安装配置SP提供指导

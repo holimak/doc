@@ -2,7 +2,7 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [IdP接入本地认证系统及属性释放](#idp%E6%8E%A5%E5%85%A5%E6%9C%AC%E5%9C%B0%E8%AE%A4%E8%AF%81%E7%B3%BB%E7%BB%9F%E5%8F%8A%E5%B1%9E%E6%80%A7%E9%87%8A%E6%94%BE)
+- [CARSI IdP接入本地认证系统及属性释放](#carsi-idp%E6%8E%A5%E5%85%A5%E6%9C%AC%E5%9C%B0%E8%AE%A4%E8%AF%81%E7%B3%BB%E7%BB%9F%E5%8F%8A%E5%B1%9E%E6%80%A7%E9%87%8A%E6%94%BE)
   - [1. 用户属性定义](#1-%E7%94%A8%E6%88%B7%E5%B1%9E%E6%80%A7%E5%AE%9A%E4%B9%89)
     - [1.1 CARSI用户属性](#11-carsi%E7%94%A8%E6%88%B7%E5%B1%9E%E6%80%A7)
     - [1.2 IdP端配置属性](#12-idp%E7%AB%AF%E9%85%8D%E7%BD%AE%E5%B1%9E%E6%80%A7)

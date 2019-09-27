@@ -2,7 +2,7 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [Shibboleth IdP界面定制](#shibboleth-idp%E7%95%8C%E9%9D%A2%E5%AE%9A%E5%88%B6)
+- [CARSI IdP界面定制](#carsi-idp%E7%95%8C%E9%9D%A2%E5%AE%9A%E5%88%B6)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

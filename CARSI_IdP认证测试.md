@@ -2,7 +2,7 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [IdP环境验证](#idp%E7%8E%AF%E5%A2%83%E9%AA%8C%E8%AF%81)
+- [CARSI IdP认证测试](#carsi-idp%E8%AE%A4%E8%AF%81%E6%B5%8B%E8%AF%95)
   - [预上线环境](#%E9%A2%84%E4%B8%8A%E7%BA%BF%E7%8E%AF%E5%A2%83)
   - [线上环境](#%E7%BA%BF%E4%B8%8A%E7%8E%AF%E5%A2%83)
   - [常见问题](#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98)
