@@ -188,15 +188,15 @@ export CLASSPATH=.:$JAVA_HOME/jre/lib:$JAVA_HOME/lib:$JAVA_HOME/lib/tools.jar
 [root@www ~]# cd /root/inst/shibboleth-identity-provider-${IdP_VERSION}
 [root@www ~]# ./bin/install.sh
 
-Source (Distribution) Directory (press <enter> to accept default): [/root/inst/shibboleth-identity-provider-3.x.x] #enter
+Source (Distribution) Directory (press <enter> to accept default): [/root/inst/shibboleth-identity-provider-3.x.x] #默认回车
 
-Installation Directory: [/opt/shibboleth-idp] #enter
+Installation Directory: [/opt/shibboleth-idp] #默认回车
 
-Hostname: [idp.xxx.edu.cn] enter #确认是修改后的域名
+Hostname: [idp.xxx.edu.cn] enter #确认是修改后的域名，无误后回车
 
-SAML EntityID: [https://域名/idp/shibboleth] #enter
+SAML EntityID: [https://域名/idp/shibboleth] #默认回车
 
-Attribute Scope: [xxx.edu.cn] #输入学校域名，如xxx.edu.cn
+Attribute Scope: [xxx.edu.cn] #输入学校域名，如xxx.edu.cn 回车
 
 Backchannel PKCS12 Password: #创建后台证书密码
 

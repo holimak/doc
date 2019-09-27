@@ -61,11 +61,9 @@ idp.authn.LDAP.userFilter = (uid={user})
 idp.attribute.resolver.LDAP.searchFilter = (uid=$resolutionContext.principal)
 ```
 
-以上属性在ldap.properties已经定义好了，只需要修改属性内容就行，请勿直接拷贝到ldap.properties，会造成属性重复定义，其他未提到的属性按照ldap.properties默认配置就行
+以上属性在ldap.properties已经定义好了，只需要修改属性内容即可，请勿直接拷贝到ldap.properties，会造成属性重复定义，其他未提到的属性按照ldap.properties默认配置即可。
 
-因LDAP服务器配置差异，以上配置请和LDAP管理员确认。强烈建议先在IdP所在的服务器上测试一下对本校LDAP的连接性。
-
-如果ldap中不是用uid来唯一区别用户，需要将以下三项配置中的uid改成用来区分用户的属性名称
+如果LDAP中不是用uid来唯一区别用户，需要将以下三项配置中的uid改成用来区分用户的属性名称
 
 ```
 idp.authn.LDAP.dnFormat = uid=%s, ou=People,dc=Test,dc=Test
@@ -73,7 +71,7 @@ idp.authn.LDAP.userFilter = (uid={user})
 idp.attribute.resolver.LDAP.searchFilter = (uid=$resolutionContext.principal)
 ```
 
-**注：**华东师范大学冯骐老师分享了一个轻量级的 LDAP测试工具 https://github.com/shanghai-edu/ldap-test-tool ， 可以用来进行测试
+**注：**因LDAP服务器配置差异，以上配置请和LDAP管理员确认，需要了解本校LDAP的目录结构以及字段定义后再做修改。强烈建议先在IdP所在的服务器上测试一下对本校LDAP的连接性，以及查看一下从LDAP管理员处要来的属性及其取值是否正确。华东师范大学冯骐老师分享了一个轻量级的 LDAP测试工具 https://github.com/shanghai-edu/ldap-test-tool ， 可以用来进行测试。或使用类似LDAP Browser或LDAP Admin这样的工具进行验证。最好在IdP所在服务器上进行验证，以排除环境问题的影响。
 
 配置属性释放，用以下内容替换/opt/shibboleth-idp/conf/attribute-resolver.xml文件：
 
@@ -128,7 +126,11 @@ idp.attribute.resolver.LDAP.searchFilter = (uid=$resolutionContext.principal)
 </AttributeResolver>
 ```
 
-这里，从LDAP读取的属性名称为usertype，如果其值为staf则将eduPersonScopedAffiliation属性设置为staff，如果其值为std则将eduPersonScopedAffiliation属性设置为student。可根据学校LDAP的实际情况进行映射。
+**注1：**以上配置中关于eduPersonScopedAffiliation属性的取值，这里进行简单说明。通俗点的理解就是LDAP中不同的账号类型标记不同的eduPersonScopedAffiliation属性的取值，比如教工的标记为教工，学生的标记为学生，需要向管理员确认LDAP是通过哪个字段来区分的，以及相应的取值范围。这里的例子，从LDAP读取的属性名称为usertype，如果其值为staf则将eduPersonScopedAffiliation属性设置为staff，如果其值为std则将eduPersonScopedAffiliation属性设置为student。可根据学校LDAP的实际情况进行映射，根据情况修改上面配置样例中的attributeNames="**usertype**"，以及Script块中的判断条件和取值的逻辑。
+
+**注2：**关于eduPersonPrincipalName属性，上面配置样例中是直接通过LDAP属性uid获取的，即attributeNames="uid"。如果LDAP中不是用uid来唯一区别用户，则这里也需要进行相应修改。
+
+
 
 ### 2.2 接入OAuth2认证
 

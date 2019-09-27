@@ -82,20 +82,20 @@ server ntp.aliyun.com
 ### 2. 安装&本地配置IdP
 
 #### 2.1 安装IdP
-请提前确认好Hostname（idp所使用的域名）和Attribute Scope（xxx.edu.cn）参数，安装过程中会根据这两个参数生成多个文件，且安装后无法更改。
+请提前确认好Hostname（IdP所使用的域名）和Attribute Scope（xxx.edu.cn）参数，安装过程中会根据这两个参数生成多个文件，且安装后无法更改。
 
 ```
 [root@www ~]# sh /root/inst/idp3config/autoconfig.sh
 
-Source (Distribution) Directory (press <enter> to accept default): [/root/inst/shibboleth-identity-provider-3.x.x] #enter
+Source (Distribution) Directory (press <enter> to accept default): [/root/inst/shibboleth-identity-provider-3.x.x] #默认回车
 
-Installation Directory: [/opt/shibboleth-idp] #enter
+Installation Directory: [/opt/shibboleth-idp] #默认回车
 
-Hostname: [idp.xxx.edu.cn] enter #确认是修改后的域名
+Hostname: [idp.xxx.edu.cn] enter #确认是修改后的域名，无误后回车
 
-SAML EntityID: [https://idp.xxx.edu.cn/idp/shibboleth] #enter
+SAML EntityID: [https://idp.xxx.edu.cn/idp/shibboleth] #默认回车
 
-Attribute Scope: [xxx.edu.cn] #输入学校域名，如xxx.edu.cn
+Attribute Scope: [xxx.edu.cn] #输入学校域名，如xxx.edu.cn 回车
 
 Backchannel PKCS12 Password: #创建后台证书密码
 
@@ -154,6 +154,7 @@ Enter Import Password: #输入安装过程中创建的后台证书密码
 SSLCertificateFile cert证书绝对路径cert.pem
 SSLCertificateKeyFile privkey绝对路径privkey.pem
 
+#完成后重启服务
 [root@www ~]# systemctl restart httpd
 [root@www ~]# systemctl restart tomcat
 ```
