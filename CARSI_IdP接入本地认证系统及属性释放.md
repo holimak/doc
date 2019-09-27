@@ -57,9 +57,21 @@ idp.authn.LDAP.bindDN = cn=Manager,dc=Test,dc=Test
 idp.authn.LDAP.bindDNCredential = 密码
 idp.authn.LDAP.dnFormat = uid=%s, ou=People,dc=Test,dc=Test
 idp.authn.LDAP.subtreeSearch = true
+idp.authn.LDAP.userFilter = (uid={user})
+idp.attribute.resolver.LDAP.searchFilter = (uid=$resolutionContext.principal)
 ```
 
+以上属性在ldap.properties已经定义好了，只需要修改属性内容就行，请勿直接拷贝到ldap.properties，会造成属性重复定义，其他未提到的属性按照ldap.properties默认配置就行
+
 因LDAP服务器配置差异，以上配置请和LDAP管理员确认。强烈建议先在IdP所在的服务器上测试一下对本校LDAP的连接性。
+
+如果ldap中不是用uid来唯一区别用户，需要将以下三项配置中的uid改成用来区分用户的属性名称
+
+```
+idp.authn.LDAP.dnFormat = uid=%s, ou=People,dc=Test,dc=Test
+idp.authn.LDAP.userFilter = (uid={user})
+idp.attribute.resolver.LDAP.searchFilter = (uid=$resolutionContext.principal)
+```
 
 **注：**华东师范大学冯骐老师分享了一个轻量级的 LDAP测试工具 https://github.com/shanghai-edu/ldap-test-tool ， 可以用来进行测试
 
