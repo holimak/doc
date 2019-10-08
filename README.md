@@ -15,8 +15,7 @@
 （1）基于CARSI联盟提供的ova镜像安装：[CARSI_IdP安装配置文档_ova.md](CARSI_IdP安装配置文档_ova.md)
 
 （2）基于Shibboleth安装包安装：[CARSI_IdP安装配置文档_详细.md](CARSI_IdP安装配置文档_详细.md)
-
-
+ 
 
 其中引用的文档（通常无需单独查阅）：
 
@@ -27,6 +26,8 @@
 [CARSI_IdP界面简单定制.md](CARSI_IdP界面简单定制.md)
 
 [CARSI_IdP属性释放常见问题.md](CARSI_IdP属性释放常见问题.md)
+
+[IdP2_CARSI接入说明.md](IdP2_CARSI接入说明.md)
 
 
 
