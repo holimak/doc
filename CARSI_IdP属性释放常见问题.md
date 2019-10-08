@@ -2,7 +2,7 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [CARSI_IdP属性释放常见问题](#carsi_idp%E5%B1%9E%E6%80%A7%E9%87%8A%E6%94%BE%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98)
+- [CARSI IdP属性释放常见问题](#carsi-idp%E5%B1%9E%E6%80%A7%E9%87%8A%E6%94%BE%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98)
   - [利用SP的Session调试页面确认属性释放](#%E5%88%A9%E7%94%A8sp%E7%9A%84session%E8%B0%83%E8%AF%95%E9%A1%B5%E9%9D%A2%E7%A1%AE%E8%AE%A4%E5%B1%9E%E6%80%A7%E9%87%8A%E6%94%BE)
   - [原理说明](#%E5%8E%9F%E7%90%86%E8%AF%B4%E6%98%8E)
     - [SP端配置及获取属性的原理](#sp%E7%AB%AF%E9%85%8D%E7%BD%AE%E5%8F%8A%E8%8E%B7%E5%8F%96%E5%B1%9E%E6%80%A7%E7%9A%84%E5%8E%9F%E7%90%86)

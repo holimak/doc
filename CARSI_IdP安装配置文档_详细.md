@@ -2,7 +2,7 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [Shibboleth IdP 安装配置文档 (详细)](#shibboleth-idp-%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E6%96%87%E6%A1%A3-%E8%AF%A6%E7%BB%86)
+- [CARSI IdP 安装配置文档 (详细)](#carsi-idp-%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E6%96%87%E6%A1%A3-%E8%AF%A6%E7%BB%86)
   - [目标](#%E7%9B%AE%E6%A0%87)
   - [安装准备](#%E5%AE%89%E8%A3%85%E5%87%86%E5%A4%87)
   - [安装步骤](#%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4)
@@ -188,15 +188,15 @@ export CLASSPATH=.:$JAVA_HOME/jre/lib:$JAVA_HOME/lib:$JAVA_HOME/lib/tools.jar
 [root@www ~]# cd /root/inst/shibboleth-identity-provider-${IdP_VERSION}
 [root@www ~]# ./bin/install.sh
 
-Source (Distribution) Directory (press <enter> to accept default): [/root/inst/shibboleth-identity-provider-3.x.x] #enter
+Source (Distribution) Directory (press <enter> to accept default): [/root/inst/shibboleth-identity-provider-3.x.x] #默认回车
 
-Installation Directory: [/opt/shibboleth-idp] #enter
+Installation Directory: [/opt/shibboleth-idp] #默认回车
 
-Hostname: [idp.xxx.edu.cn] enter #确认是修改后的域名
+Hostname: [idp.xxx.edu.cn] enter #确认是修改后的域名，无误后回车
 
-SAML EntityID: [https://域名/idp/shibboleth] #enter
+SAML EntityID: [https://域名/idp/shibboleth] #默认回车
 
-Attribute Scope: [xxx.edu.cn] #输入学校域名，如xxx.edu.cn
+Attribute Scope: [xxx.edu.cn] #输入学校域名，如xxx.edu.cn 回车
 
 Backchannel PKCS12 Password: #创建后台证书密码
 
