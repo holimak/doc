@@ -374,6 +374,8 @@ SSLCertificateKeyFile privkey绝对路径privkey.pem
 <MetadataProvider id="HTTPMetadata"
           xsi:type="FileBackedHTTPMetadataProvider"
           backingFile="/opt/shibboleth-idp/metadata/carsifed-metadata-pre.xml"
+          minRefreshDelay="PT5M"
+          maxRefreshDelay="PT10M"
           metadataURL="https://dspre.carsi.edu.cn/carsifed-metadata-pre.xml"> 
 
          <MetadataFilter xsi:type="SignatureValidation" certificateFile="/opt/shibboleth-idp/credentials/dsmeta.pem" />
