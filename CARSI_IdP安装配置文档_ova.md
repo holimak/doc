@@ -37,7 +37,7 @@
 
 - IdP域名（网络中心维护，建议：idp.xxx.edu.cn；图书馆维护，建议：idp-lib.xxx.edu.cn），以及对应的https证书，域名一经确定，安装配置后无法修改；
 - 网络可通达校园网外网，如果机器前面有防火墙，需要开通机器的TCP 80，443，8443端口；
-- 下载[idp3_ldap_install_v1.0.ova](https://mgmt.carsi.edu.cn/frontend/web/docs/idp3_ldap_install_v1.0.ova)文件，导入exsi虚拟机中（虚机为linux环境，其root密码请发邮件至carsi@pku.edu.cn 获取）。
+- 下载[idp3_ldap_install_v1.0.ova](https://mgmt.carsi.edu.cn/frontend/web/docs/idp3_ldap_install_v1.0.ova)文件，导入exsi虚拟机中（虚机为linux环境，其root密码请发邮件至carsi@pku.edu.cn 获取，获取后请尽快修改密码）。
 - 下载相关[附件](https://mgmt.carsi.edu.cn/frontend/web/docs/carsi-idp-installation-manual.zip)（IdP安装包及本文档提及的相关文件）。
 
 ## 安装步骤
