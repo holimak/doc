@@ -83,7 +83,7 @@ href='https://spoauth.carsi.edu.cn/oauth2server/authorize.php?response_type=code
 ​	请使用以下服务测试网址，根据code获取token和refresh token。
 
 ```
-	{curl -u $client_id:$client_password https:// spoauth.carsi.edu.cn/oauth2server/token.php -d 'grant_type=authorization_code &code=【填入callback页面得到的code】'}， 
+{curl -u $client_id:$client_password https:// spoauth.carsi.edu.cn/oauth2server/token.php -d 'grant_type=authorization_code &code=【填入callback页面得到的code】'}， 
 ```
 
 ​	d)   配置【认证成功的callback地址（$callback_url）】页面在获取到token之后，调用OAuth服务的resource接口，获得对应的资源信息（即用户身份信息，如affiliation）。注意该信息使用添加服务时提供的公钥加密，需要使用对应的私钥解密。 
@@ -171,5 +171,5 @@ if(isset($_SESSION['decrypted']))    echo  "<hr><h1>affiliation(decrypted):</h1>
 
    c)   选择所在学校IdP进行身份认证；
 
-   d)   认证成功后，浏览器被自动重定向到【callback页面】，应用系统调试成功。
+   d)   认证成功后，浏览器被自动重定向到【callback页面】，并可现实相关resource信息，应用系统调试成功。
 
