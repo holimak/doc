@@ -26,6 +26,11 @@ idp.login.donotcache = 不保存账号信息
 idp.login.login = 登录
 idp.login.pleasewait = 正在登录，请等待...
 idp.attribute-release.revoke = 清除历史授权信息
+
+idp.login.forgotPassword  = 忘记密码？
+idp.url.password.reset = http://密码重置网站url
+idp.login.needHelp = 使用帮助
+idp.url.helpdesk = http://使用帮助页面url
 ```
 
 idp.logo中的logo图像文件在/opt/shibboleth-idp/edit-webapp/images/目录里
