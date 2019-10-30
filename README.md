@@ -33,7 +33,7 @@
 
 
 
-## IdP安装配置文档
+## SP安装配置文档
 
 （1）基于Shibboleth安装包安装： [CARSI_SP安装配置文档.md](https://github.com/carsi-cernet/doc/blob/master/CARSI_SP安装配置文档.md)
 
