@@ -15,7 +15,7 @@
 （1）基于CARSI联盟提供的ova镜像安装：[CARSI_IdP安装配置文档_ova.md](CARSI_IdP安装配置文档_ova.md)
 
 （2）基于Shibboleth安装包安装：[CARSI_IdP安装配置文档_详细.md](CARSI_IdP安装配置文档_详细.md)
- 
+
 
 其中引用的文档（通常无需单独查阅）：
 
@@ -27,7 +27,17 @@
 
 [CARSI_IdP属性释放常见问题.md](CARSI_IdP属性释放常见问题.md)
 
+[CARSI_IdP_SP关于禁用日志统计功能的说明](https://github.com/carsi-cernet/doc/blob/master/CARSI_IdP_SP关于禁用日志统计功能的说明.md)
+
 [IdP2_CARSI接入说明.md](IdP2_CARSI接入说明.md)
+
+
+
+## IdP安装配置文档
+
+（1）基于Shibboleth安装包安装： [CARSI_SP安装配置文档.md](https://github.com/carsi-cernet/doc/blob/master/CARSI_SP安装配置文档.md)
+
+（2）基于CARSI联盟提供的SP，作为OAuth客户端接入： [CARSI_SP+OAuth网关方式接入SP.md](https://github.com/carsi-cernet/doc/blob/master/CARSI_SP%2BOAuth网关方式接入SP.md)
 
 
 
@@ -37,6 +47,10 @@
 
 https://wiki.shibboleth.net/confluence/display/IdP0/Installation
 
-（2） Installing a Shibboleth 3.x IdP
+（2） Installing a Shibboleth 3.x IdP：
 
 https://tuakiri.ac.nz/confluence/display/Tuakiri/Installing+a+Shibboleth+3.x+IdP#InstallingaShibboleth3.xIdP-Testing
+
+（3） SWITCH的文档，写得比较全面，可以作为参考：
+
+https://www.switch.ch/aai/guides/
