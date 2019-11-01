@@ -4,6 +4,7 @@
 
 - [CARSI环境安装配置文档](#carsi%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E6%96%87%E6%A1%A3)
   - [IdP安装配置文档](#idp%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E6%96%87%E6%A1%A3)
+  - [SP安装配置文档](#sp%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E6%96%87%E6%A1%A3)
   - [参考链接](#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
