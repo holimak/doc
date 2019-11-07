@@ -204,7 +204,11 @@ SSLCertificateKeyFile privkey绝对路径privkey.pem
 
 ## IdP上线运行
 
-在预上线环境（https://dspre.carsi.edu.cn/) 试验访问成功后，请发送邮件给 carsi@pku.edu.cn，申请在CARSI线上环境上线。待收到上线成功邮件通知后，执行以下脚本完成上线。
+在预上线环境（https://dspre.carsi.edu.cn/) 试验访问成功后，请发送邮件给 carsi@pku.edu.cn，申请在CARSI线上环境上线，邮件中请将SP属性释放成功的截图作为附件提供（可参考下图）。
+
+![CARSI](/CARSI_IdP安装配置文档_ova.files/verified.png)
+
+待收到上线成功邮件通知后，执行以下脚本完成上线。
 
 ```
 [root@www ~]# sh /root/inst/idp3config/onlineidp.sh

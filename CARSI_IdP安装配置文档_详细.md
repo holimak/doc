@@ -452,7 +452,11 @@ grep `date -d -1hours +%Y-%m-%dT%H` /opt/shibboleth-idp/logs/idp-audit.log > /va
 
 ### 11. IdP上线运行
 
-在预上线环境（https://dspre.carsi.edu.cn/) 试验访问成功后，请发送邮件给 carsi@pku.edu.cn，申请在CARSI产品环境上线。待收到上线成功邮件通知后，下载https://www.carsi.edu.cn/carsimetadata/carsifed-metadata.xml 文件，放入/opt/shibboleth-idp/metadata文件夹，并且修改文件的所属用户和组。
+在预上线环境（https://dspre.carsi.edu.cn/) 试验访问成功后，请发送邮件给 carsi@pku.edu.cn，申请在CARSI产品环境上线，邮件中请将SP属性释放成功的截图作为附件提供（可参考下图）。
+
+![CARSI](/CARSI_IdP安装配置文档_ova.files/verified.png)
+
+待收到上线成功邮件通知后，下载https://www.carsi.edu.cn/carsimetadata/carsifed-metadata.xml 文件，放入/opt/shibboleth-idp/metadata文件夹，并且修改文件的所属用户和组。
 
 ```
 [root@www ~]# chown -R tomcat.tomcat /opt/shibboleth-idp
