@@ -27,8 +27,6 @@
 
 - eduPersonScopedAffiliation：核心属性，标识用户的身份，取值为：faculty, student, staff, alum, member, affiliate, employee, other，后面加上@xxx.edu.cn。对应的身份分别为：教师、学生、员工、校友、成员、附属人员，聘用人员、其他。
 
-- eduPersonPrincipalName：推荐属性，人员网络标识，用于机构间认证，格式为user@scope，例如userid@xxx.edu.cn，userid建议使用学校用户管理系统中唯一用户标识，xxx.edu.cn是userid所在的学校。
-
 ### 1.2 IdP端配置属性
 
 IdP有两个配置文件，与属性配置有关。
@@ -347,13 +345,10 @@ shibcas.serverName = https://xxx.xxx.xxx.xxx #IdP的域名
 
      <AttributeDefinition xsi:type="SubjectDerivedAttribute" id="employeetype" principalAttributeName="eduPersonScopedAffiliation"></AttributeDefinition>
      
-
-     <AttributeDefinition xsi:type="SubjectDerivedAttribute" id="employeename" principalAttributeName="eduPersonPrincipalName"></AttributeDefinition>
-
 </AttributeResolver>
 ```
 
-说明：eduPersonScopedAffiliation为CAS直接释放的属性，其值为文本类型（faculty, student, staff, alum, member, affiliate, employee, other之一）。这里的配置是先取得它的值（存入employeetype属性），再在其上通过Scoped的属性加上学校域名的后缀，最终由id为eduPersonScopedAffiliation的属性释放。eduPersonPrincipalName属性同理进行了配置。
+说明：eduPersonScopedAffiliation为CAS直接释放的属性，其值为文本类型（faculty, student, staff, alum, member, affiliate, employee, other之一）。这里的配置是先取得它的值（存入employeetype属性），再在其上通过Scoped的属性加上学校域名的后缀，最终由id为eduPersonScopedAffiliation的属性释放。
 
 （5）重新编译war文件，并且重启tomcat：
 
@@ -386,11 +381,11 @@ cas.authn.ldap[0].baseDn=ou=People,dc=pku,dc=edu
 cas.authn.ldap[0].searchFilter=uid={user}
 cas.authn.ldap[0].bindDn=cn=Manager,dc=pku,dc=edu
 cas.authn.ldap[0].bindCredential=xxxxxxxx
-cas.authn.ldap[0].principalAttributeList=employeeType:eduPersonScopedAffiliation,uid:eduPersonPrincipalName
-cas.authn.attributeRepository.defaultAttributesToRelease=eduPersonScopedAffiliation,eduPersonPrincipalName
+cas.authn.ldap[0].principalAttributeList=employeeType:eduPersonScopedAffiliation
+cas.authn.attributeRepository.defaultAttributesToRelease=eduPersonScopedAffiliation
 ```
 
-这里的环境，代表用户身份的字段为employeeType，最后两行的配置是将其作为eduPersonScopedAffiliation属性释放给IdP。eduPersonPrincipalName同理进行了配置。可根据学校具体配置进行相应调整。
+这里的环境，代表用户身份的字段为employeeType，最后两行的配置是将其作为eduPersonScopedAffiliation属性释放给IdP。可根据学校具体配置进行相应调整。
 
 
 
