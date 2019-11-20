@@ -95,12 +95,6 @@ idp.attribute.resolver.LDAP.searchFilter = (uid=$resolutionContext.principal)
         <AttributeEncoder xsi:type="SAML2String" name="urn:oid:1.3.6.1.4.1.5923.1.1.1.9" friendlyName="eduPersonScopedAffiliation" encodeType="false" />
     </AttributeDefinition>
 
-   <AttributeDefinition xsi:type="Scoped" id="eduPersonPrincipalName" scope="%{idp.scope}">
-        <InputDataConnector ref="myLDAP" attributeNames="uid"/>
-        <AttributeEncoder xsi:type="SAML1ScopedString" name="urn:mace:dir:attribute-def:eduPersonPrincipalName" encodeType="false" />
-        <AttributeEncoder xsi:type="SAML2ScopedString" name="urn:oid:1.3.6.1.4.1.5923.1.1.1.6" friendlyName="eduPersonPrincipalName" encodeType="false" />
-   </AttributeDefinition>
-
    <DataConnector id="myLDAP" xsi:type="LDAPDirectory"
     ldapURL="%{idp.attribute.resolver.LDAP.ldapURL}"
     baseDN="%{idp.attribute.resolver.LDAP.baseDN}" 
@@ -127,8 +121,6 @@ idp.attribute.resolver.LDAP.searchFilter = (uid=$resolutionContext.principal)
 ```
 
 **注1：**以上配置中关于eduPersonScopedAffiliation属性的取值，这里进行简单说明。通俗点的理解就是LDAP中不同的账号类型标记不同的eduPersonScopedAffiliation属性的取值，比如教工的标记为教工，学生的标记为学生，需要向管理员确认LDAP是通过哪个字段来区分的，以及相应的取值范围。这里的例子，从LDAP读取的属性名称为usertype，如果其值为staf则将eduPersonScopedAffiliation属性设置为staff，如果其值为std则将eduPersonScopedAffiliation属性设置为student。可根据学校LDAP的实际情况进行映射，根据情况修改上面配置样例中的attributeNames="**usertype**"，以及Script块中的判断条件和取值的逻辑。
-
-**注2：**关于eduPersonPrincipalName属性，上面配置样例中是直接通过LDAP属性uid获取的，即attributeNames="uid"。如果LDAP中不是用uid来唯一区别用户，则这里也需要进行相应修改。
 
 
 
@@ -237,11 +229,6 @@ shibcas.oauth2redirecturi = https://xxx.xxx.xxx/idp/Authn/ExtOauth2?conversation
          <AttributeEncoder xsi:type="SAML2String" name="urn:oid:1.3.6.1.4.1.5923.1.1.1.9" friendlyName="eduPersonScopedAffiliation" encodeType="false" />
    </AttributeDefinition>
 
-   <AttributeDefinition xsi:type="SubjectDerivedAttribute" id=" eduPersonPrincipalName" principalAttributeName="eduPersonPrincipalName">
-         <AttributeEncoder xsi:type="SAML1String" name="urn:mace:dir:attribute-def:eduPersonPrincipalName" encodeType="false" />
-         <AttributeEncoder xsi:type="SAML2String" name="urn:oid:1.3.6.1.4.1.5923.1.1.1.6" friendlyName="eduPersonPrincipalName" encodeType="false" />
-   </AttributeDefinition>
-
 </AttributeResolver>
 ```
 
@@ -266,7 +253,7 @@ Total time: 3 seconds
 
 **备注：关于OAuth服务器端配置：**
 
-这里我们使用开源的[oauth2-server-php](http://bshaffer.github.io/oauth2-server-php-docs/cookbook/)进行搭建的OAuth服务器。需要OAuth2服务器在获取资源的地方以json格式返回eduPersonScopedAffiliation和eduPersonPrincipalName属性信息，涉及到的文件就是resource.php，如下代码所示：最后一行代码以json形式返回了需要的属性，这里只为展示使用了固定的值，学校可根据实际情况读取LDAP或JDBC数据库中的数据进行返回。
+这里我们使用开源的[oauth2-server-php](http://bshaffer.github.io/oauth2-server-php-docs/cookbook/)进行搭建的OAuth服务器。需要OAuth2服务器在获取资源的地方以json格式返回eduPersonScopedAffiliation属性信息，涉及到的文件就是resource.php，如下代码所示：最后一行代码以json形式返回了需要的属性，这里只为展示使用了固定的值，学校可根据实际情况读取LDAP或JDBC数据库中的数据进行返回。
 
 ```
 <?php
@@ -279,7 +266,7 @@ if (!$server->verifyResourceRequest(OAuth2\Request::createFromGlobals())) {
      die;
 }
 
-echo json_encode(array('success' => 'true', 'uid' => '20190606', 'eduPersonScopedAffiliation' => 'faculty@pku.edu.cn', 'eduPersonPrincipalName' => '20190606@pku.edu.cn')); 
+echo json_encode(array('success' => 'true', 'uid' => '20190606', 'eduPersonScopedAffiliation' => 'faculty@pku.edu.cn')); 
 ```
 
 
@@ -360,11 +347,6 @@ shibcas.serverName = https://xxx.xxx.xxx.xxx #IdP的域名
 
      <AttributeDefinition xsi:type="SubjectDerivedAttribute" id="employeetype" principalAttributeName="eduPersonScopedAffiliation"></AttributeDefinition>
      
-     <AttributeDefinition id="eduPersonPrincipalName" xsi:type="Scoped" scope="%{idp.scope}" sourceAttributeID="employeename">
-         <Dependency ref="employeename" />
-         <AttributeEncoder xsi:type="SAML1ScopedString" name="urn:mace:dir:attribute-def:eduPersonPrincipalName" encodeType="false" />
-         <AttributeEncoder xsi:type="SAML2ScopedString" name="urn:oid:1.3.6.1.4.1.5923.1.1.1.6" friendlyName="eduPersonPrincipalName" encodeType="false" />
-     </AttributeDefinition>
 
      <AttributeDefinition xsi:type="SubjectDerivedAttribute" id="employeename" principalAttributeName="eduPersonPrincipalName"></AttributeDefinition>
 
@@ -426,7 +408,6 @@ cas.authn.attributeRepository.defaultAttributesToRelease=eduPersonScopedAffiliat
      <AttributeFilterPolicy id="carsiAttrFilterPolicy">
          <PolicyRequirementRule xsi:type="ANY" />
          <AttributeRule attributeID="eduPersonScopedAffiliation" permitAny="true" />
-         <AttributeRule attributeID="eduPersonPrincipalName" permitAny="true" />
      </AttributeFilterPolicy>
 
 </AttributeFilterPolicyGroup>
@@ -452,26 +433,26 @@ cas.authn.attributeRepository.defaultAttributesToRelease=eduPersonScopedAffiliat
 如果对释放属性取值做限制：
 
 ```
-#把<AttributeRule attributeID="eduPersonPrincipalName" permitAny="true" />改为
+#把<AttributeRule attributeID="eduPersonScopedAffiliation" permitAny="true" />改为
 
-<AttributeRule attributeID="eduPersonPrincipalName">
+<AttributeRule attributeID="eduPersonScopedAffiliation">
      <PermitValueRule xsi:type="Value" value="jsmith" ignoreCase="true" />
 </AttributeRule>
 
-#value="jsmith"表示只释放eduPersonPrincipalName值为jsmith的属性
+#value="jsmith"表示只释放eduPersonScopedAffiliation值为jsmith的属性
 ```
 如果需要对释放属性限制多个取值:
 ```
-#把<AttributeRule attributeID="eduPersonPrincipalName" permitAny="true" />改为
+#把<AttributeRule attributeID="eduPersonScopedAffiliation" permitAny="true" />改为
 
-<AttributeRule attributeID="eduPersonPrincipalName">
+<AttributeRule attributeID="eduPersonScopedAffiliation">
   <PermitValueRule xsi:type="OR">
      <Rule xsi:type="Value" value="jsmith" ignoreCase="true" />
      <Rule xsi:type="Value" value="jimmy" ignoreCase="true" />
   </PermitValueRule>
 </AttributeRule>
 
-#value="jsmith" value="jimmy"表示只释放eduPersonPrincipalName值为jsmith或jimmy的属性
+#value="jsmith" value="jimmy"表示只释放eduPersonScopedAffiliation值为jsmith或jimmy的属性
 ```
 
 ## 4. 用户登录页面添加/取消隐私保护功能
