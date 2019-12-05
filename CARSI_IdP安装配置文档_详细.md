@@ -279,6 +279,9 @@ tomcat配置
 <Connector port="8009" address="127.0.0.1"
                enableLookups="false" redirectPort="443" protocol="AJP/1.3"
                tomcatAuthentication="false" />
+               
+#将后面的配置中的<Connector port="8009" protocol="AJP/1.3" redirectPort="8443" />注释掉
+<!-- <Connector port="8009" protocol="AJP/1.3" redirectPort="8443" /> -->
 ```
 
 因为tomcat7不支持JSTL，需要附件的javax.servlet.jsp.jstl-api-1.2.1.jar和javax.servlet.jsp.jstl-1.2.1.jar，放入tomcat的/usr/share/tomcat/lib/路径下。 
