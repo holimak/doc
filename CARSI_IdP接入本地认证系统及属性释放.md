@@ -505,3 +505,6 @@ my-tou.text = This is an example Terms of Use
 idp.consent.allowPerAttribute=true
 ```
 
+## 5. 属性释放常见问题
+
+请参考文档：[CARSI_IdP属性释放常见问题.md](CARSI_IdP属性释放常见问题.md)
