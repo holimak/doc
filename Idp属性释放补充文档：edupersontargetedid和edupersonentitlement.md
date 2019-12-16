@@ -48,7 +48,7 @@
 [root@www ~]#systemctl restart tomcat
 ```
 
-##### 配置eduPersonTargetedID
+#### 配置eduPersonTargetedID
 
 共两种配置方式。一种是通过数据库永久存放用户ePTID，另一种是依据一定的算法每次计算用户的ePTID。选用一种即可。
 
@@ -291,7 +291,7 @@ openssl rand 32 -base64
 [root@www ~]#systemctl restart tomcat
 ```
 
-##### 去掉eduPersonPrincipalName属性
+#### 去掉eduPersonPrincipalName属性
 
 取消属性释放，其他SP无法再获得此属性数据。
 
@@ -311,7 +311,7 @@ openssl rand 32 -base64
 [root@www ~]#systemctl restart tomcat
 ```
 
-##### 完整配置文件参考
+#### 完整配置文件参考
 
 attribute-resolver.xml（数据库方式配置ePTID）
 
