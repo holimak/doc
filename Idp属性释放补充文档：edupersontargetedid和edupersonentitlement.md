@@ -485,7 +485,7 @@ attribute-filter.xml
  <AttributeRule attributeID="eduPersonTargetedID" permitAny="true" />
  </AttributeFilterPolicy></AttributeFilterPolicyGroup>
  
- <AttributeFilterPolicy id="carsiAttrFilterToSingleSPPolicy">
+ <AttributeFilterPolicy id="carsiAttrFilterToSPPolicy">
      <PolicyRequirementRule xsi:type="Requester" value="https://sp.example.org" />
      <AttributeRule attributeID="eduPersonEntitlement" permitAny="true" />
 </AttributeFilterPolicy>
