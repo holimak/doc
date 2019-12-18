@@ -479,7 +479,7 @@ attribute-filter.xml
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xsi:schemaLocation="urn:mace:shibboleth:2.0:afp http://shibboleth.net/schema/idp/shibboleth-afp.xsd">
 
-<AttributeFilterPolicy id="carsiAttrFilterToSPPolicy">
+<AttributeFilterPolicy id="carsiAttrFilterPolicy">
  <PolicyRequirementRule xsi:type="ANY" />
  <AttributeRule attributeID="eduPersonScopedAffiliation" permitAny="true" />
  <AttributeRule attributeID="eduPersonTargetedID" permitAny="true" />
