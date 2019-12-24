@@ -10,8 +10,12 @@
     - [2.1 接入LDAP认证](#21-%E6%8E%A5%E5%85%A5ldap%E8%AE%A4%E8%AF%81)
     - [2.2 接入OAuth2认证](#22-%E6%8E%A5%E5%85%A5oauth2%E8%AE%A4%E8%AF%81)
     - [2.3 接入CAS认证](#23-%E6%8E%A5%E5%85%A5cas%E8%AE%A4%E8%AF%81)
-  - [3. 释放用户属性](#3-%E9%87%8A%E6%94%BE%E7%94%A8%E6%88%B7%E5%B1%9E%E6%80%A7)
-  - [4. 用户登录页面添加/取消隐私保护功能](#4-%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E9%A1%B5%E9%9D%A2%E6%B7%BB%E5%8A%A0%E5%8F%96%E6%B6%88%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4%E5%8A%9F%E8%83%BD)
+  - [3. 配置eduPersonTargetedID](#3-%E9%85%8D%E7%BD%AEedupersontargetedid)
+    - [3.1 第一种方式：采用数据库永久存放用户ePTID](#31-%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E5%BC%8F%E9%87%87%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E6%B0%B8%E4%B9%85%E5%AD%98%E6%94%BE%E7%94%A8%E6%88%B7eptid)
+    - [3.2 第二种方式：依据一定的算法每次计算用户的ePTID，释放给所有SP](#32-%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E5%BC%8F%E4%BE%9D%E6%8D%AE%E4%B8%80%E5%AE%9A%E7%9A%84%E7%AE%97%E6%B3%95%E6%AF%8F%E6%AC%A1%E8%AE%A1%E7%AE%97%E7%94%A8%E6%88%B7%E7%9A%84eptid%E9%87%8A%E6%94%BE%E7%BB%99%E6%89%80%E6%9C%89sp)
+  - [4. 释放用户属性](#4-%E9%87%8A%E6%94%BE%E7%94%A8%E6%88%B7%E5%B1%9E%E6%80%A7)
+  - [5. 用户登录页面添加/取消隐私保护功能](#5-%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E9%A1%B5%E9%9D%A2%E6%B7%BB%E5%8A%A0%E5%8F%96%E6%B6%88%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4%E5%8A%9F%E8%83%BD)
+  - [6. 属性释放常见问题](#6-%E5%B1%9E%E6%80%A7%E9%87%8A%E6%94%BE%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -29,7 +33,7 @@
 - eduPersonTargetedID（ePTID）：是一个永久的，可读性不强的身份识别码，用于唯一标识用户身份，同一个IdP的同一个用户为不同的SP提供不同的ePTID，在保护用户隐私的前提下支持SP区分用户。
 - eduPersonEntitlement（ePE）：标识用户访问特定资源的权限的URI。表示用户有权限访问此资源。取值固定为“urn:mace:dir:entitlement:common-lib-terms”。表示参照IdP和图书馆类SP已经达成的线下协议，IdP用户去访问SP资源。建议将此属性释放给指定SP。
 
-需要定义的属性：
+需要定义的属性（仅需定义无需释放，ePTID的释放依赖此属性）：
 
 - eduPersonPrincipalName（ePPN）：用于标识用户身份，取值为user@scope。为了保护用户隐私，2019年12月起，建议IdP保留ePPN定义，取消ePPN释放，改为释放ePTID。
 
@@ -443,11 +447,11 @@ cas.authn.attributeRepository.defaultAttributesToRelease=eduPersonScopedAffiliat
 
 这里的环境，代表用户身份的字段为employeeType，最后两行的配置是将其作为eduPersonScopedAffiliation属性释放给IdP。eduPersonPrincipalName同理进行了配置。可根据学校具体配置进行相应调整。
 
-#### 配置eduPersonTargetedID
+## 3. 配置eduPersonTargetedID
 
 共两种配置方式。一种是通过数据库永久存放用户ePTID，另一种是依据一定的算法每次计算用户的ePTID。选用一种即可。
 
-##### 第一种方式：采用数据库永久存放用户ePTID
+### 3.1 第一种方式：采用数据库永久存放用户ePTID
 
 出于安全考虑，建议数据库只允许本地访问、删除匿名用户、禁止远程登录、删除test数据库。
 
@@ -649,7 +653,7 @@ p:validationQueryTimeout="5" />
 [root@www ~]#systemctl restart tomcat
 ```
 
-##### 第二种方式：依据一定的算法每次计算用户的ePTID，释放给所有SP
+### 3.2 第二种方式：依据一定的算法每次计算用户的ePTID，释放给所有SP
 
 此种方式依据事先配置好的ePTID生成算法，在每次需属性释放时进行计算，无需配置数据库，方法简单。不重装系统、不修改配置的情况下，同一用户对同一SP的ePTID唯一。
 
@@ -686,7 +690,7 @@ openssl rand 32 -base64
 [root@www ~]#systemctl restart tomcat
 ```
 
-## 3. 释放用户属性
+## 4. 释放用户属性
 
 使用以下内容替换/opt/shibboleth-idp/conf/attribute-filter.xml，并将下述 https://sp.example.org 替换成SP的entityID，比如Elsevier的entityID，配置属性释放原则： #xsi:type=”ANY”表示的是对任意SP释放属性，permitAny=”true”，表示的是释放任意eduPersonScopedAffiliation取值的属性
 
@@ -755,7 +759,7 @@ openssl rand 32 -base64
 #value="jsmith" value="jimmy"表示只释放eduPersonPrincipalName值为jsmith或jimmy的属性
 ```
 
-## 4. 用户登录页面添加/取消隐私保护功能
+## 5. 用户登录页面添加/取消隐私保护功能
 
 用户登录，输入用户名密码后，可允许用户参与个人隐私保护和属性释放过程，包括“隐私保护须知”页面和“属性释放选择”页面。如开放给用户，需进行如下配置。如无需添加用户隐私保护功能，可跳过此步骤。
 
@@ -810,6 +814,6 @@ my-tou.text = This is an example Terms of Use
 idp.consent.allowPerAttribute=true
 ```
 
-## 5. 属性释放常见问题
+## 6. 属性释放常见问题
 
 请参考文档：[CARSI_IdP属性释放常见问题.md](CARSI_IdP属性释放常见问题.md)
