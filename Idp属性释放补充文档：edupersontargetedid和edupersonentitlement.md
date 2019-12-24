@@ -1,3 +1,16 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [配置eduPersonEntitlement](#%E9%85%8D%E7%BD%AEedupersonentitlement)
+- [配置eduPersonTargetedID](#%E9%85%8D%E7%BD%AEedupersontargetedid)
+  - [第一种方式：采用数据库永久存放用户ePTID](#%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E5%BC%8F%E9%87%87%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E6%B0%B8%E4%B9%85%E5%AD%98%E6%94%BE%E7%94%A8%E6%88%B7eptid)
+  - [第二种方式：依据一定的算法每次计算用户的ePTID，释放给所有SP](#%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E5%BC%8F%E4%BE%9D%E6%8D%AE%E4%B8%80%E5%AE%9A%E7%9A%84%E7%AE%97%E6%B3%95%E6%AF%8F%E6%AC%A1%E8%AE%A1%E7%AE%97%E7%94%A8%E6%88%B7%E7%9A%84eptid%E9%87%8A%E6%94%BE%E7%BB%99%E6%89%80%E6%9C%89sp)
+- [去掉eduPersonPrincipalName属性](#%E5%8E%BB%E6%8E%89edupersonprincipalname%E5%B1%9E%E6%80%A7)
+- [完整配置文件参考](#%E5%AE%8C%E6%95%B4%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%8F%82%E8%80%83)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 此文档在CentOS7上验证通过。
 
 - eduPersonTargetedID（ePTID）：是一个永久的，可读性不强的身份识别码，用于唯一标识用户身份，同一个IdP的同一个用户为不同的SP提供不同的ePTID，在保护用户隐私的前提下支持SP区分用户。
