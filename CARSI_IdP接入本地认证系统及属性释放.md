@@ -316,7 +316,7 @@ echo json_encode(array('success' => 'true', 'uid' => '20190606', 'eduPersonScope
 
 下载并解压shib-cas-authn3-3.2.3.zip（已作为附件提供，也可自行[下载](https://github.com/Unicon/shib-cas-authn3)）
 
-解压后将IDP_HOME/flows/authn/Shibcas目录下的2个XML文件shibcas-authn-beans.xml和shibcas-authn-flow.xml拷贝至IdP服务器的/opt/shibboleth-idp/flow/authn/Shibcas/下。
+解压后将IDP_HOME/flows/authn/Shibcas目录下的2个XML文件shibcas-authn-beans.xml和shibcas-authn-flow.xml拷贝至IdP服务器的/opt/shibboleth-idp/flows/authn/Shibcas/下。
 
 将IDP_HOME/edit-webapp/目录下的no-conversation-state.jsp文件拷贝至IdP服务器的/opt/shibboleth-idp/edit-webapp/下。
 
